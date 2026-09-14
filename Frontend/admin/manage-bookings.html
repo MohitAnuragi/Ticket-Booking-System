@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bookings — Admin</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page">
+      <h1>Bookings</h1>
+
+      <nav class="admin-tabs" aria-label="Admin sections">
+        <a class="nav-link" href="dashboard.html">Overview</a>
+        <a class="nav-link" href="manage-venues.html">Venues</a>
+        <a class="nav-link" href="manage-events.html">Events</a>
+        <a class="nav-link is-current" href="manage-bookings.html" aria-current="page">Bookings</a>
+      </nav>
+
+      <form class="filters" id="booking-filters">
+        <div class="field">
+          <label for="filter-event">Event</label>
+          <select id="filter-event" name="eventId">
+            <option value="">All events</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="filter-status">Status</label>
+          <select id="filter-status" name="status">
+            <option value="">Any status</option>
+            <option value="PENDING">PENDING</option>
+            <option value="CONFIRMED">CONFIRMED</option>
+            <option value="CANCELLED">CANCELLED</option>
+            <option value="EXPIRED">EXPIRED</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <span class="field-label" aria-hidden="true">&nbsp;</span>
+          <button type="submit" class="btn btn-primary">Apply</button>
+        </div>
+
+        <div class="field">
+          <span class="field-label" aria-hidden="true">&nbsp;</span>
+          <button type="reset" class="btn btn-ghost">Clear</button>
+        </div>
+      </form>
+
+      <div id="page-status" class="status" hidden></div>
+
+      <section id="booking-table" aria-label="Bookings"></section>
+
+      <div class="pager">
+        <p class="pager-info" id="pager-info" role="status" aria-live="polite"></p>
+        <div class="selection-actions">
+          <button type="button" class="btn btn-ghost btn-sm" id="page-previous">Previous</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="page-next">Next</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="manage-bookings.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My bookings — Ticket Booking</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>My bookings</h1>
+          <p id="booking-summary" role="status" aria-live="polite"></p>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="index.html">Browse events</a>
+      </div>
+
+      <div id="page-status" class="status" hidden></div>
+
+      <div id="booking-list" class="booking-list"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="js/bookings.js"></script>
+  </body>
+</html>

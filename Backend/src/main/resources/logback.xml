@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{28} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!-- Ktor's own request logging is configured via the CallLogging plugin. -->
+    <logger name="io.ktor.server.Application" level="INFO" />
+    <!-- Exposed logs every statement at DEBUG; keep it at INFO to avoid noise. -->
+    <logger name="Exposed" level="INFO" />
+    <logger name="com.zaxxer.hikari" level="INFO" />
+</configuration>

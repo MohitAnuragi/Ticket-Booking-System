@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create an account — Ticket Booking</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page auth-layout">
+      <div class="auth-card card">
+        <h1>Create an account</h1>
+        <p class="auth-intro">Takes a moment. You will be signed in straight away.</p>
+
+        <div id="page-status" class="status" hidden></div>
+
+        <form id="auth-form" data-mode="register" novalidate>
+          <div class="field">
+            <label for="auth-name">Name</label>
+            <input
+              type="text"
+              id="auth-name"
+              name="name"
+              autocomplete="name"
+              maxlength="120"
+              aria-describedby="error-name"
+              required
+            />
+            <p class="field-error" id="error-name" data-error-for="name" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="auth-email">Email</label>
+            <input
+              type="email"
+              id="auth-email"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              maxlength="160"
+              aria-describedby="error-email"
+              required
+            />
+            <p class="field-error" id="error-email" data-error-for="email" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="auth-password">Password</label>
+            <input
+              type="password"
+              id="auth-password"
+              name="password"
+              autocomplete="new-password"
+              aria-describedby="hint-password error-password"
+              required
+            />
+            <p class="field-hint" id="hint-password">At least 8 characters.</p>
+            <p class="field-error" id="error-password" data-error-for="password" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="auth-confirm">Confirm password</label>
+            <input
+              type="password"
+              id="auth-confirm"
+              name="confirm"
+              autocomplete="new-password"
+              aria-describedby="error-confirm"
+              required
+            />
+            <p class="field-error" id="error-confirm" data-error-for="confirm" role="alert"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+        </form>
+
+        <p class="auth-alt">Already registered? <a href="login.html">Sign in</a></p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="js/auth.js"></script>
+  </body>
+</html>

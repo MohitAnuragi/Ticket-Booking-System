@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin — Ticket Booking</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>Admin</h1>
+          <p id="admin-greeting"></p>
+        </div>
+      </div>
+
+      <nav class="admin-tabs" aria-label="Admin sections">
+        <a class="nav-link is-current" href="dashboard.html" aria-current="page">Overview</a>
+        <a class="nav-link" href="manage-venues.html">Venues</a>
+        <a class="nav-link" href="manage-events.html">Events</a>
+        <a class="nav-link" href="manage-bookings.html">Bookings</a>
+      </nav>
+
+      <div id="page-status" class="status" hidden></div>
+
+      <section class="stat-grid" id="admin-stats" aria-label="Totals"></section>
+
+      <h2>Next events</h2>
+      <section id="admin-recent"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events — Ticket Booking</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page">
+      <div class="page-head">
+        <div>
+          <h1>What's on</h1>
+          <p>Browse events, pick your seats, and book in two steps.</p>
+        </div>
+      </div>
+
+      <!-- A real form so Enter submits and the browser's own semantics apply. -->
+      <form class="filters" id="filter-form" role="search" aria-label="Filter events">
+        <div class="field">
+          <label for="filter-search">Search</label>
+          <input
+            type="search"
+            id="filter-search"
+            name="search"
+            placeholder="Title or description"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="field">
+          <label for="filter-city">City</label>
+          <select id="filter-city" name="city">
+            <option value="">All cities</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="filter-category">Category</label>
+          <select id="filter-category" name="category">
+            <option value="">All categories</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="filter-date">Date</label>
+          <input type="date" id="filter-date" name="date" />
+        </div>
+
+        <div class="field field-inline">
+          <input type="checkbox" id="filter-upcoming" name="upcomingOnly" checked />
+          <label for="filter-upcoming">Upcoming only</label>
+        </div>
+
+        <div class="field">
+          <span class="field-label" aria-hidden="true">&nbsp;</span>
+          <button type="reset" class="btn btn-ghost" id="filter-reset">Clear filters</button>
+        </div>
+      </form>
+
+      <!-- aria-live so a screen reader hears the result count change without the
+           focus moving. -->
+      <p id="result-count" class="event-card-meta" role="status" aria-live="polite"></p>
+
+      <div id="page-status" class="status" hidden></div>
+
+      <div id="event-results" class="event-grid"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="js/events.js"></script>
+  </body>
+</html>

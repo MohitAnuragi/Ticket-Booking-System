@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your booking — Ticket Booking</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page booking-page">
+      <p class="breadcrumb"><a href="index.html">&larr; All events</a></p>
+
+      <h1>Your booking</h1>
+      <p class="detail-meta">
+        Holding seats reserves them for 24 hours. Confirming completes the booking.
+      </p>
+
+      <div id="page-status" class="status" hidden></div>
+
+      <section class="card" id="booking-panel" aria-label="Booking details"></section>
+
+      <div class="booking-actions" id="booking-actions"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="js/booking.js"></script>
+  </body>
+</html>

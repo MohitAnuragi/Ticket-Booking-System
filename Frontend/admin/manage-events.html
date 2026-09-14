@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Events — Admin</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page">
+      <h1>Events</h1>
+
+      <nav class="admin-tabs" aria-label="Admin sections">
+        <a class="nav-link" href="dashboard.html">Overview</a>
+        <a class="nav-link" href="manage-venues.html">Venues</a>
+        <a class="nav-link is-current" href="manage-events.html" aria-current="page">Events</a>
+        <a class="nav-link" href="manage-bookings.html">Bookings</a>
+      </nav>
+
+      <div id="page-status" class="status" hidden></div>
+
+      <div class="admin-columns">
+        <section id="event-table" aria-label="Events"></section>
+
+        <section class="card" aria-labelledby="event-form-heading">
+          <h2 id="event-form-heading">New event</h2>
+          <form class="admin-form" id="event-form" novalidate>
+            <div class="field">
+              <label for="event-venue">Venue</label>
+              <select id="event-venue" name="venueId" required>
+                <option value="">Select a venue…</option>
+              </select>
+              <p class="field-hint">Cannot be changed later — seat rows are derived from it.</p>
+            </div>
+
+            <div class="field">
+              <label for="event-title">Title</label>
+              <input type="text" id="event-title" name="title" maxlength="200" required />
+            </div>
+
+            <div class="field">
+              <label for="event-category">Category</label>
+              <input type="text" id="event-category" name="category" maxlength="60"
+                     placeholder="Concert" />
+            </div>
+
+            <div class="field">
+              <label for="event-description">Description</label>
+              <textarea id="event-description" name="description" rows="3"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="event-start">Starts</label>
+                <input type="datetime-local" id="event-start" name="startTime" required />
+              </div>
+              <div class="field">
+                <label for="event-end">Ends</label>
+                <input type="datetime-local" id="event-end" name="endTime" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="event-price">Base price</label>
+                <input type="text" id="event-price" name="basePrice" inputmode="decimal"
+                       placeholder="1500.00" required />
+                <p class="field-hint">Seat tiers multiply this.</p>
+              </div>
+              <div class="field">
+                <label for="event-status">Status</label>
+                <select id="event-status" name="status">
+                  <option value="PUBLISHED">PUBLISHED</option>
+                  <option value="DRAFT">DRAFT</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="event-poster">Poster URL</label>
+              <input type="url" id="event-poster" name="posterUrl" placeholder="https://…" />
+            </div>
+
+            <div class="booking-actions">
+              <button type="submit" class="btn btn-primary">Create event</button>
+              <button type="button" class="btn btn-ghost" id="cancel-edit" hidden>
+                Cancel editing
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="manage-events.js"></script>
+  </body>
+</html>

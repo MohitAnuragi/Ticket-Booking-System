@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Event — Ticket Booking</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page">
+      <p class="breadcrumb"><a href="index.html">&larr; All events</a></p>
+
+      <section class="card" id="event-detail" aria-label="Event details"></section>
+
+      <div id="page-status" class="status" hidden></div>
+
+      <section class="seatmap-section" aria-labelledby="seatmap-heading">
+        <div class="page-head">
+          <div>
+            <h2 id="seatmap-heading">Choose your seats</h2>
+            <p>
+              Seats are held for 24 hours once you confirm the selection. Availability is
+              read when the page loads — refresh if it has been open a while.
+            </p>
+          </div>
+          <button type="button" class="btn btn-ghost btn-sm" id="refresh-seats">
+            Refresh availability
+          </button>
+        </div>
+
+        <div class="seat-legend" id="seat-legend"></div>
+
+        <!-- aria-busy is toggled while a fetch is in flight. -->
+        <div class="seat-map" id="seat-map" aria-label="Seat map"></div>
+      </section>
+    </main>
+
+    <!-- Sticky selection bar: the total and the action stay reachable while
+         scrolling a long seat map. -->
+    <div class="selection-summary" id="selection-summary" role="region" aria-live="polite"
+         aria-label="Your selection">
+      <div class="selection-summary-inner">
+        <div>
+          <p class="selection-count" id="selection-count">No seats selected</p>
+          <p class="selection-total price" id="selection-total"></p>
+        </div>
+        <div class="selection-actions">
+          <button type="button" class="btn btn-ghost" id="clear-selection" disabled>Clear</button>
+          <button type="button" class="btn btn-primary" id="hold-button" disabled>
+            Hold seats
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="js/seatmap.js"></script>
+  </body>
+</html>

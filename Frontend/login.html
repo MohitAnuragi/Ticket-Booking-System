@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign in — Ticket Booking</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="page auth-layout">
+      <div class="auth-card card">
+        <h1>Sign in</h1>
+        <p class="auth-intro">Sign in to hold seats and see your bookings.</p>
+
+        <div id="page-status" class="status" hidden></div>
+
+        <form id="auth-form" data-mode="login" novalidate>
+          <div class="field">
+            <label for="auth-email">Email</label>
+            <input
+              type="email"
+              id="auth-email"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              aria-describedby="error-email"
+              required
+            />
+            <p class="field-error" id="error-email" data-error-for="email" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="auth-password">Password</label>
+            <input
+              type="password"
+              id="auth-password"
+              name="password"
+              autocomplete="current-password"
+              aria-describedby="error-password"
+              required
+            />
+            <p class="field-error" id="error-password" data-error-for="password" role="alert"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+
+        <p class="auth-alt">
+          No account yet? <a href="register.html">Create one</a>
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner" id="site-footer"></div>
+    </footer>
+
+    <script type="module" src="js/auth.js"></script>
+  </body>
+</html>
